@@ -200,9 +200,8 @@ Class Action {
 				}
 			}
 		}
-	
+
 		if(empty($id)){
-			$data .= ", status = 1 "; // Set the initial status to 1 (approved)
 			$save = $this->db->query("INSERT INTO events set $data");
 		}else{
 			$save = $this->db->query("UPDATE events set $data where id = $id");
@@ -211,7 +210,6 @@ Class Action {
 			return 1;
 		}
 	}
-	
 	function update_event_stats(){
 		extract($_POST);
 			$save = $this->db->query("UPDATE events set status = $status where id = $id");
@@ -227,44 +225,30 @@ Class Action {
 	}
 	function save_attendee(){
 		extract($_POST);
-		
-		// Check if the guest limit has been reached
-		$event_id = (int)$event_id; // Sanitize the event ID
-		$guest_limit = $this->db->query("SELECT guest_limit FROM events WHERE id = $event_id")->fetch_assoc()['guest_limit'];
-		$registered_guests = $this->db->query("SELECT COUNT(*) as total FROM attendees WHERE event_id = $event_id")->fetch_assoc()['total'];
-		
-		if ($registered_guests >= $guest_limit) {
-			return 2; // Return code 2 to indicate that the guest limit has been reached
-		}
-		
 		$data = "";
 		foreach($_POST as $k => $v){
 			if(!in_array($k, array('id','status')) && !is_numeric($k)){
 				if(empty($data)){
 					$data .= " $k='$v' ";
-				} else {
+				}else{
 					$data .= ", $k='$v' ";
 				}
 			}
 		}
-		
 		if(isset($status)){
-			$data .= ", status=1 ";
-		} else {
-			$data .= ", status=0 ";
+					$data .= ", status=1 ";
+		}else{
+					$data .= ", status=0 ";
 		}
-		
 		if(empty($id)){
-			$save = $this->db->query("INSERT INTO attendees SET $data");
-		} else {
-			$save = $this->db->query("UPDATE attendees SET $data WHERE id = $id");
+			$save = $this->db->query("INSERT INTO attendees set $data");
+		}else{
+			$save = $this->db->query("UPDATE attendees set $data where id = $id");
 		}
-		
 		if($save){
-			return 1; // Return code 1 to indicate successful attendee registration
+			return 1;
 		}
 	}
-	
 	function delete_attendee(){
 		extract($_POST);
 		$delete = $this->db->query("DELETE FROM attendees where id = $id");

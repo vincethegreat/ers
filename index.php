@@ -95,10 +95,10 @@
 
   <!-- Main Footer -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2020 <a href="https://www.facebook.com/photo.php?fbid=2315149565454135&set=pb.100008773415764.-2207520000.&type=3" target="_blank">Vince Carl F. Aratan, Jezer S. Abella</strong>
-    All rights reserved. JEZER WKWKWKWKWKWK
+    <strong>Copyright &copy; 2023 <a href="https://www.sourcecodester.com/">Vince Car. F. Aratan, MIT Puhon</a>.</strong>
+    All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Event Registration System</b>
+      <b>Event Registration and Attendance System</b>
     </div>
   </footer>
 </div>

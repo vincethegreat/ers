@@ -4,7 +4,7 @@
 <body class="hold-transition register-page">
 <div class=" col-lg-7">
   <div class="register-logo">
-    <a href="#"><b>Event Registration System</b></a>
+    <a href="#"><b>Event Registration and Attendance System</b></a>
   </div>
 <?php session_start() ?>
 <?php include('admin/db_connect.php'); ?>

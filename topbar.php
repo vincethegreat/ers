@@ -9,7 +9,7 @@
         </li>
       <?php endif; ?>
         <li>
-          <a class="nav-link text-white"  href="./" role="button"> <large><b>Event Registration System</b></large></a>
+          <a class="nav-link text-white"  href="./" role="button"> <large><b>Event Registration and Attendance System</b></large></a>
         </li>
       </ul>
 
